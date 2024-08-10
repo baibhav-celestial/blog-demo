@@ -14,7 +14,7 @@ const NewsCard = ({data}) => {
             </div>
             <div>
             <img
-                className='w-[100px] h-[150px]'
+                className='w-[200px] h-[150px]'
                 src={urlToImage}
                 alt='news-img'
             />
