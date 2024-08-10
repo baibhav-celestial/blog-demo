@@ -24,7 +24,6 @@ const SignUp = () => {
         .then((userCredential) => {
           // Signed up 
           const user = userCredential.user;
-          console.log(auth,'baibhav')
           updateProfile(user, {
             displayName: userName.current.value,
         }).then(() => {

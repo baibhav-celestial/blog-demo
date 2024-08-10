@@ -12,7 +12,6 @@ const App = () => {
   // let location = useLocation();
   // const dispatch = useDispatch();
   // const navigate = useNavigate();
-  // console.log({location})
   // useEffect(()=>{
   //     const unsubscribe = onAuthStateChanged(auth, (user) => {
   //       if (user) {

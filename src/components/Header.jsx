@@ -11,7 +11,6 @@ const Header = () => {
     let location = useLocation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    console.log({ location })
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {

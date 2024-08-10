@@ -19,7 +19,7 @@ const Login = () => {
                 .then((userCredential) => {
                     // Signed in 
                     const user = userCredential.user;
-                    console.log('signed in user is--->', user)
+                    console.log('signed in user is--->')
 
                     // navigate('/')
                     // ...
