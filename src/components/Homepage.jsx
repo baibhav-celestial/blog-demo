@@ -3,7 +3,6 @@ import { WALL_STREET_API } from '../utils/constant';
 import useGetNewsData from '../utils/hooks/useGetNewsData';
 import { useSelector } from 'react-redux';
 import NewsCard from './NewsCard';
-// import { BookLoader } from "react-awesome-loaders";
 import RingLoader from "react-spinners/RingLoader";
 
 const Homepage = () => {
