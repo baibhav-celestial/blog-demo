@@ -1,5 +1,5 @@
 import { Outlet, createBrowserRouter, useLocation, useNavigate } from 'react-router-dom';
-import './App.css';
+
 import Header from './components/Header';
 import { addUser, removeUser } from './utils/store/userSlice';
 import { useDispatch } from 'react-redux';
