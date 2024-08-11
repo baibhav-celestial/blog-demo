@@ -56,7 +56,7 @@ const Header = () => {
                     {isLoggedIn && <button className='-mt-2.5' onClick={handleLogout}>Log out</button>}
                 </div>
             </div>
-            {location.pathname == '/' && <Homepage />}
+            {location.pathname == '/' && <Homepage newsTagVal = 'Wall Street' />}
         </>
 
     );
