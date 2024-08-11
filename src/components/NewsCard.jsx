@@ -1,7 +1,6 @@
 import React from 'react';
 
 const NewsCard = ({data}) => {
-    console.log(data)
     const {author, content, description, publishedAt, source, title, url, urlToImage} = data;
     return ( 
         <div>

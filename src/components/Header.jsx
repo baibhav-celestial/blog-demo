@@ -5,12 +5,15 @@ import { auth } from '../utils/firebase';
 import { addUser, removeUser } from '../utils/store/userSlice';
 import { useDispatch } from 'react-redux';
 import Homepage from './Homepage';
+import useOnlineStatus from '../utils/hooks/useOnlineStatus';
+import OfflinePage from '../utils/OfflinePage';
 
 const Header = () => {
     // const paramValues = useParams();
     let location = useLocation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const onlineStatus = useOnlineStatus();
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -56,7 +59,7 @@ const Header = () => {
                     {isLoggedIn && <button className='-mt-2.5' onClick={handleLogout}>Log out</button>}
                 </div>
             </div>
-            {location.pathname == '/' && <Homepage newsTagVal = 'Wall Street' />}
+            {onlineStatus ? location.pathname == '/' && <Homepage newsTagVal = 'Wall Street' /> : <OfflinePage />}
         </>
 
     );

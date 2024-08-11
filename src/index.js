@@ -10,6 +10,7 @@ import PageNotFound from './components/PageNotFound';
 import { Provider } from 'react-redux';
 import appStore from './utils/store/appStore';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import ShimmerUI from './components/ShimmerUI';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const Login = lazy(()=>import('./components/Login'));
@@ -23,11 +24,11 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: '/login',
-        element:<Suspense fallback={<div>Loading...</div>}><Login /></Suspense>
+        element:<Suspense fallback={<ShimmerUI />}><Login /></Suspense>
       },
       {
         path: '/sign-up',
-        element: <Suspense fallback={<div>Loading...</div>}><SignUp /> </Suspense>
+        element: <Suspense fallback={<ShimmerUI />}><SignUp /> </Suspense>
       }
     ],
     errorElement: <PageNotFound />
