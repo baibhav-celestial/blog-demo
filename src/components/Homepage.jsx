@@ -31,7 +31,7 @@ const Homepage = ({ newsTagVal }) => {
     }, [selectedTag, newsTagVal]);
 
     if (status === 'pending') {
-        return <div className='absolute top-[40%] left-[40%]'>
+        return <div className='absolute top-[40%] left-[45%]'>
             <RingLoader
                 color="black"
                 loading={true}
@@ -61,7 +61,7 @@ const Homepage = ({ newsTagVal }) => {
                 <ul className='flex' onClick={(e) => {
                     if (e.target.tagName === 'LI') setSelectedTag(e.target.textContent)
                 }}>
-                    {allTags.map((item, index) => <li className={`cursor-pointer mx-2 ${selectedTag == item ? 'bg-blue-300' : 'bg-slate-400'}   rounded-xl p-1`} key={index} name={item}>{item}</li>)}
+                    {allTags.map((item, index) => <li className={`cursor-pointer mx-2 ${selectedTag == item ? 'bg-blue-300' : 'bg-slate-400'}   rounded-xl py-2 px-4`} key={index} name={item}>{item}</li>)}
                 </ul>
             </div>
             {newsBlog.map((item, index) => <NewsCard key={item.title + item.source.id} data={item} />)}
