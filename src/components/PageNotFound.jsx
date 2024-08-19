@@ -9,7 +9,7 @@ const PageNotFound = () => {
 
     return (
         <div>
-            Opps! the page you're trying is not available.
+            Opps! the page you&apos;re trying is not available.
             {err && <div>
                 {err.status + ' ' + err.statusText}
             </div>}

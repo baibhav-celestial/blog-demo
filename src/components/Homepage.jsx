@@ -4,9 +4,8 @@ import useGetNewsData from '../utils/hooks/useGetNewsData';
 import { useSelector } from 'react-redux';
 import NewsCard from './NewsCard';
 import RingLoader from "react-spinners/RingLoader";
-import PageNotFound from './PageNotFound';
 import { useNavigate } from 'react-router-dom';
-
+/* eslint-disable react/prop-types */
 const Homepage = ({ newsTagVal }) => {
     const allTags = ['Wall Street', 'Tesla News', 'Technology']
     const [selectedTag, setSelectedTag] = useState('Wall Street' || newsTagVal)

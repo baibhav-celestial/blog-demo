@@ -1,8 +1,8 @@
 import React from 'react';
-
+/* eslint-disable react/prop-types */
 const NewsCard = ({data}) => {
-    console.log('data',data)
-    const {author, content, description, publishedAt, source, title, url, urlToImage} = data;
+    /* eslint-disable react/prop-types */
+    const {author, description, title, url, urlToImage} = data;
     return ( 
         <div>
             <hr />
