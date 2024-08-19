@@ -1,11 +1,12 @@
 import React from 'react';
 
 const NewsCard = ({data}) => {
+    console.log('data',data)
     const {author, content, description, publishedAt, source, title, url, urlToImage} = data;
     return ( 
         <div>
             <hr />
-           <div className='flex justify-between mx-8 my-3 p-4 rounded-lg bg-gray-400/[0.15]'>
+           <div className='flex justify-between mx-8 my-3 p-4 rounded-lg bg-gray-400/[0.15]' data-testid="news-card">
             <div>
             <h3>{title}</h3>
             <h5>{author}</h5>

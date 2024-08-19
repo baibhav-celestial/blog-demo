@@ -57,7 +57,7 @@ const Homepage = ({ newsTagVal }) => {
         <div>
             {/* make this list as li and then set the on click bg color different and selected value will be set in useState for API call  */}
             {/* <div className='mx-4 my-2 cursor-pointer'>{allTags.map((item, index)=><span className='mx-2 bg-slate-400 rounded-xl p-1' key={index} onClick={()=> setSelectedTag(item)}>{item}</span>)}</div> */}
-            <div className='mx-4 my-2'>
+            <div className='mx-4 my-2' data-testid='selected-tag'>
                 <ul className='flex' onClick={(e) => {
                     if (e.target.tagName === 'LI') setSelectedTag(e.target.textContent)
                 }}>
