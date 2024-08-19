@@ -1,0 +1,46 @@
+name: test and deploy
+on: [push, workflow_dispatch]
+jobs:
+    Lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get Code
+              uses: actions/checkout@v3
+            - name: Install Node
+              uses: actions/setup-node@v3
+              with: 
+                node-version: 18
+            - name: Install all dependencies
+              run: npm ci
+            - name: Lint test
+              run: npm run lint
+    testing:
+        needs: Lint
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get Code
+              uses: actions/checkout@v3
+            - name: Install Node
+              uses: actions/setup-node@v3
+              with: 
+                node-version: 18
+            - name: Install all dependencies
+              run: npm ci
+            - name: run test cases
+              run: npm run test
+    Building-And-Deploye-The-App:
+        needs: testing
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get Code
+              uses: actions/checkout@v3
+            - name: Install Node
+              uses: actions/setup-node@v3
+              with: 
+                node-version: 18
+            - name: Install all dependencies
+              run: npm ci
+            - name: Build the application
+              run: npm run build
+            - name: Deploy the App
+              run: echo "Deploying..."
