@@ -19,10 +19,9 @@ const useGetNewsData = (data_url, newsTag) => {
     useEffect(() => {
         if (status === 'success' && data) {
             switch(newsTag) {
-                case 'Wall Street': dispatch(addWallStreet(data.articles));
-                break;
                 case 'Tesla News': dispatch(addTeslaNews(data.articles));
                 break;
+                default: dispatch(addWallStreet(data.articles));
             }
             
         }

@@ -1,21 +1,18 @@
 import React, { useRef } from 'react';
-import Login from './Login';
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utils/firebase';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/store/userSlice';
-import { useNavigate } from 'react-router-dom';
 const SignUp = () => {
 
     const email = useRef()
     const password = useRef()
     const userName = useRef()
     const dispatch = useDispatch()
-    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if ( email?.current?.value.length == 0 || password?.current?.value.length == 0) {
+        if ( email?.current?.value.length === 0 || password?.current?.value.length === 0) {
 
             return
            
@@ -45,8 +42,6 @@ const SignUp = () => {
           // ...
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
           // ..
         });
     }

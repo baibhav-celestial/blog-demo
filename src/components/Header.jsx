@@ -1,6 +1,6 @@
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { auth } from '../utils/firebase';
 import { addUser, removeUser } from '../utils/store/userSlice';
 import { useDispatch } from 'react-redux';
@@ -35,7 +35,7 @@ const Header = () => {
         });
 
         return () => unsubscribe();
-    }, [])
+    }, [dispatch, navigate])
 
     const handleLogout = () => {
         signOut(auth).then(() => {
@@ -59,7 +59,7 @@ const Header = () => {
                     {isLoggedIn && <button className='-mt-2.5' onClick={handleLogout}>Log out</button>}
                 </div>
             </div>
-            {onlineStatus ? location.pathname == '/' && <Homepage newsTagVal = 'Wall Street' /> : <OfflinePage />}
+            {onlineStatus ? location.pathname === '/' && <Homepage newsTagVal = 'Wall Street' /> : <OfflinePage />}
         </>
 
     );
