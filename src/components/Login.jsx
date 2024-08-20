@@ -1,7 +1,6 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useRef } from 'react';
-import { useDispatch } from 'react-redux';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation} from 'react-router-dom';
 import { auth } from '../utils/firebase';
 
 const Login = () => {
